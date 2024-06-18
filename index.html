@@ -5,14 +5,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=devicewidth, initial-scale=1.0">
     <title>Adla Konversi Suhu</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Ini link CSS -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <header>
-        <h1>Website Konversi Suhu</h1>
+    <header class="tes">
+        <section id="container">
+            <h1>Website Konversi Suhu</h1>
+        </section>
     </header>
 
+    <!-- Main Content -->
+    <main>
+        <h4>Masukkan suhu derajat Celcius (&deg;C) pada kotak di bawah, lalu klik tombol konversi untuk menampilkan hasil dalam bentuk Fahrenheit (&deg;F)</h4> 
+
+        <!-- Section Celcius -->
+        <section class="celcius-container">
+
+            <header>
+                <h3>Celcius (&deg;C) :</h3>
+            </header>
+
+            <section>
+                <textarea>Ketikkan suhu disini</textarea>
+            </section>
+
+            <section>
+                <button class="button green-color">Konversi</button>
+                <button class="button red-color">Reset</button>
+                <button class="button blue-color">Reverse</button>
+            </section>
+
+        </section>
+        
+        <section class="result-container">
+
+        <!-- Section Fahrenheit -->
+            <section>
+
+                <header>
+                <h3>Fahrenheit (&deg;F) :</h3>
+                </header>
+
+                <section>
+                <textarea>Hasil</textarea>
+                </section>
+
+            </section>
+
+        <!-- Section Calculate -->
+            <section>
+
+                <header>
+                <h3>Cara kalkulasi :</h3>
+                </header>
+
+                <section>
+                <textarea>Cara kalkulasi</textarea>
+                </section>
+
+            </section>
+
+        </section>
+
+        <hr/>
+
+        <!-- Section Formula/info -->
+        <section>
+            <header>
+                <h1>Cara Konversi dari Celcius (&deg;C) ke Fahrenheit (&deg;F) </h1>
+            </header>
+
+            <p>
+                Suhu <span class="subject-info">S</span> derajat Fahrenheit (&deg;F) sama dengan suhu <span class="subject-info">S</span> dalam derajat Celcius (&deg;C) kali 9/5 tambah 32
+            </p>
+
+            <p>
+                <span class="subject-info">S</span> <sub>(&deg;F)</sub> =(<span class="subject-info">S</span> <sub>(&deg;C)</sub> &times; 9/5) + 32 
+            </p>
+
+            <p> atau </p>
+
+            <p>
+                <span class="subject-info">S</span> <sub>(&deg;F)</sub> =(<span class="subject-info">S</span> <sub>(&deg;C)</sub> &times; 1.8) + 32 
+            </p>
+            </section>
+        </section>
+    </main>
+
+    <!-- Ini Link JavaScript -->
     <script src="js/script.js"></script>
 </body>
 </html>
