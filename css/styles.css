@@ -43,6 +43,10 @@ input{
   resize: none;
 }
 
+input:hover{
+    border: #515253 solid;
+}
+
 .button{
     border: none;
     border-radius: 100px;
@@ -50,8 +54,14 @@ input{
     height: 45px;
     width: 95px;
     font-size: 14px;    
+    
 }
     
+.button:hover{
+    height: 47px;
+    width: 98px;
+}
+
 .green-color{
     background-color: #121214;
     color: #fff;
@@ -124,12 +134,12 @@ input{
     padding-bottom: 100px;
   }
 
-  #temperature{
+  .temperature{
     border-collapse: collapse;
     width: 100%;
   }
 
-  #temperature th{
+  .temperature th{
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
@@ -137,9 +147,16 @@ input{
     color: #fff;
   }
 
-  #temperature td{
+  .temperature td{
     padding: 8px;
     text-align: center;
     font-family: math;
     border: 1px solid #c0c0c0;
   }
+
+  #errorText {
+    color: red;
+    display: none;
+    font-size: 14px;
+    margin-top: 5px;
+}
