@@ -1,5 +1,20 @@
 /*ini css*/
 
+body{
+    margin: 0;
+    background-color: #e5e7e9;
+    font-family: sans-serif;
+}
+
+.formula{
+    font-family: math;
+    font-size: 18px;
+}
+
+.or{
+    padding-left: 100px;
+}
+
 .subject-info{
     font-family: math;
     font-size: 24px;
@@ -15,13 +30,13 @@
     justify-content: space-evenly;
 }
 
-textarea{
-    width: 200px;
+input{
+    width: 300px;
   height: 50px;
   padding: 12px 20px;
   box-sizing: border-box;
   border: 2px solid #ccc;
-  border-radius: 4px;
+  border-radius: 50px;
   background-color: #f8f8f8;
   font-size: 16px;
   font-family: math;
@@ -30,16 +45,21 @@ textarea{
 
 .button{
     border: none;
-    border-radius: 4.5px;
+    border-radius: 100px;
     font-family: math;
     height: 45px;
     width: 95px;
     font-size: 14px;    
 }
-
+    
 .green-color{
-    background-color: #12907e;
+    background-color: #121214;
     color: #fff;
+}
+
+.green-color:hover{
+    background-color: black;
+    cursor: pointer;
 }
 
 .red-color{
@@ -47,21 +67,79 @@ textarea{
     color: #fff;
 }
 
+.red-color:hover{
+    background-color: #960018;
+    cursor: pointer;
+}
+
 .blue-color{
-    background-color: #6495ed;
+    background-color: #292827;
     color: #fff;
 }
 
+.blue-color:hover{
+    background-color: #121111 ;
+    cursor: pointer;
+}
+
 #container{
-    background-color: #444;
-    justify-content: flex-end;
-    position: absolute;
-    padding: 0;
-    height: 50px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    color: #fff;
-    text-align: left;
+   overflow: hidden;
+   background: linear-gradient(#121214, #191921) ;
+   padding: 20px 10px;
     
 }
+
+
+
+#container a { 
+  float: left;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 12px;
+  padding-left: 50px;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+#container a:hover{
+    background-color: black;
+    border-radius: 10px;
+} 
+
+
+.header-right{
+    float: right;
+    padding-right: 50px;
+}
+
+  main{
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+
+  #temperature{
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  #temperature th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #121214;  
+    color: #fff;
+  }
+
+  #temperature td{
+    padding: 8px;
+    text-align: center;
+    font-family: math;
+    border: 1px solid #c0c0c0;
+  }
