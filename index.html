@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=devicewidth, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Konversi Suhu</title>
     <!-- Ini link CSS -->
     <link rel="stylesheet" href="css/styles.css">
@@ -11,24 +11,29 @@
 </head>
 
 <body>
+    <!-- Header web -->
     <header>
         <section id="container">
-            <a href="#default" class="logo">KONVERSI SUHU</a>
+            <div class="header-left">
+                <a href="#default" class="logo">KONVERSI SUHU</a>
+            </div>
             <div class="header-right">
-            <a class="home" href="#home">HOME</a>
+                <a class="home" href="#home">HOME</a>
             </div>
         </section>
     </header>
 
-        <br>
+    <br>
 
     <!-- Main Content -->
     <main>
-        <h1 id="mainTitle">Konversi Celcius (&deg;C) ke Fahrenheit (&deg;F)</h1>
-        <h4>Masukkan suhu derajat <span id="inputLabel">Celcius (&deg;C)</span> pada kotak di bawah, lalu klik tombol konversi untuk menampilkan hasil dalam bentuk <span id="outputLabel">Fahrenheit (&deg;F)</span>.</h4> 
+        <section>
+            <h1 id="mainTitle">Konversi Celcius (&deg;C) ke Fahrenheit (&deg;F)</h1>
+            <h4>Masukkan suhu derajat <span id="inputLabel">Celcius (&deg;C)</span> pada kotak di bawah, lalu klik tombol konversi untuk menampilkan hasil dalam bentuk <span id="outputLabel">Fahrenheit (&deg;F)</span>.</h4> 
+        </section>
 
         <!-- Section Celcius -->
-        <section class="celcius-container">
+        <section class="celcius-container item">
 
             <header>
                 <h3 id="inputHeader">Celcius (&deg;C) :</h3>
@@ -40,27 +45,27 @@
                 <input id="inputTemp" type="number" placeholder="Ketikkan suhu disini" >
             </section>
 
-        <br>
+    <br>
         <!-- Button section -->
-            <section>
-                <button class="button green-color" onclick="temperatureConverter()" onclick="animateButton(this)">Konversi</button>
-                <button class="button red-color" onclick="resetConverter()">Reset</button>
-                <button class="button blue-color" onclick="reverseConverter()">Reverse</button>
+            <section >
+                <button class="button green-color" onclick="temperatureConverter();animateButton(this)">Konversi</button>
+                <button class="button red-color" onclick="resetConverter();animateButton(this)">Reset</button>
+                <button class="button blue-color" onclick="reverseConverter();animateButton(this)">Reverse</button>
             </section>
 
         </section>
         
-        <section class="result-container">
+        <section class="result-container item">
 
         <!-- Section Fahrenheit -->
             <section>
 
                 <header>
-                <h3 id="outputHeader">Fahrenheit (&deg;F) :</h3>
+                    <h3 id="outputHeader">Fahrenheit (&deg;F) :</h3>
                 </header>
 
                 <section>
-                <input id="outputTemp"  type="number" placeholder="Hasil" readonly="true">
+                    <input id="outputTemp"  type="number" placeholder="Hasil" readonly="true">
                 </section>
 
             </section>
@@ -69,11 +74,11 @@
             <section>
 
                 <header>
-                <h3>Cara kalkulasi :</h3>
+                    <h3>Cara kalkulasi :</h3>
                 </header>
 
                 <section>
-                <input  id="formula" type="text" placeholder="Cara">
+                    <input  id="formula" type="text" placeholder="Cara" readonly="true">
                 </section>
 
             </section>
@@ -84,12 +89,13 @@
         <hr/>
 
         <!-- Section Formula/info -->
-        <section>
+        <section class="item">
             <!-- Formula Celcius -->
             <header>
                 <h2>Cara Konversi dari Celcius (&deg;C) ke Fahrenheit (&deg;F) </h2>
             </header>
 
+            <section>
             <p>
                 Suhu <span class="subject-info">S</span> derajat Fahrenheit (&deg;F) sama dengan suhu <span class="subject-info">S</span> dalam derajat Celcius (&deg;C) <strong>dikali</strong> 9/5 <strong>ditambah</strong> 32
             </p>
@@ -112,26 +118,27 @@
                     <h2>Cara Konversi dari Fahrenheit (&deg;F) ke Celcius (&deg;C) </h2>
                 </header>
     
-                <p>
+                    <p>
                     Suhu <span class="subject-info">S</span> dalam derajat Celcius (&deg;C) sama dengan suhu <span class="subject-info">S</span> derajat Fahrenheit (&deg;F) <strong>dikurang</strong> 32 <strong>dibagi</strong> 9/5
-                </p>
+                    </p>
     
-                <p class="formula">
+                    <p class="formula">
                     <span class="subject-info">S</span><sub>(&deg;C)</sub> = (<span class="subject-info">S</span><sub>(&deg;F)</sub> &minus;32) &divide; 9/5
-                </p>
+                    </p>
     
-                <p class="or"> atau </p>
+                    <p class="or"> atau </p>
     
-                <p class="formula">
-                    <span class="subject-info">S</span><sub>(&deg;C)</sub> = (<span class="subject-info">S</span><sub>(&deg;F)</sub> &minus;32) &divide; 1.8
-                </p>
+                    <p class="formula">
+                        <span class="subject-info">S</span><sub>(&deg;C)</sub> = (<span class="subject-info">S</span><sub>(&deg;F)</sub> &minus;32) &divide; 1.8
+                    </p>
             </section>
+        </section>
 
         <br>
         <hr/>
 
                 <!--Table-->
-            <section>
+        <section class="item">
                 <header>
                     <h2>Tabel Satuan Suhu</h2>
                 </header>
@@ -173,13 +180,12 @@
                     </tr>
 
                 </table>
-            </section>
-
         </section>
+
     </main>
 
     <footer>
-
+        <!-- Ini footer -->
     </footer>
 
     <!-- Ini Link JavaScript -->

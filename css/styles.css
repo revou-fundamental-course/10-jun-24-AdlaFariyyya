@@ -4,6 +4,7 @@ body{
     margin: 0;
     background-color: #e5e7e9;
     font-family: sans-serif;
+    box-sizing: border-box;
 }
 
 .formula{
@@ -28,23 +29,25 @@ body{
 .result-container{
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap; /*Membuat elemen wrap saat di layar kecil*/
 }
 
 input{
-    width: 300px;
-  height: 50px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 50px;
-  background-color: #f8f8f8;
-  font-size: 16px;
-  font-family: math;
-  resize: none;
+width: 100%; /*Mengubah width menjadi 100%*/
+max-width: 300px; /*menetapkan max*/
+height: 50px;
+padding: 12px 20px;
+box-sizing: border-box;
+border: 2px solid #ccc;
+border-radius: 50px;
+background-color: #f8f8f8;
+font-size: 16px;
+font-family: math;
+resize: none;
 }
 
 input:hover{
-    border: #515253 solid;
+    border: 2px solid #cccccca9;
 }
 
 .button{
@@ -53,15 +56,16 @@ input:hover{
     font-family: math;
     height: 45px;
     width: 95px;
-    font-size: 14px;    
-    
-}
-    
-.button:hover{
-    height: 47px;
-    width: 98px;
+    width: 100%; /*mengubah width menjadi 100%*/
+    max-width: 95px; /*menambahkan max-width*/
+    font-size: 14px;  
+    /* margin: 5px;   */
 }
 
+.button.clicked{
+    animation: click-animation 0.2s ease;
+}
+    
 .green-color{
     background-color: #121214;
     color: #fff;
@@ -96,7 +100,10 @@ input:hover{
    overflow: hidden;
    background: linear-gradient(#121214, #191921) ;
    padding: 20px 10px;
-    
+    display: flex; /*Untuk merapikan tulisan*/
+    justify-content: space-between;
+    align-items: center; /*meluruskan item vertikal*/
+    flex-wrap: wrap;
 }
 
 
@@ -152,11 +159,74 @@ input:hover{
     text-align: center;
     font-family: math;
     border: 1px solid #c0c0c0;
+    background-color: #fff;
   }
 
-  #errorText {
-    color: red;
-    display: none;
-    font-size: 14px;
-    margin-top: 5px;
-}
+  @media (max-width: 768px) {
+    .result-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input {
+        width: calc(100%-40px); /*adjust for padding*/
+    }
+    
+    .button{
+        width: calc(100%-40px); /*adjust for padding*/
+    }
+
+    #container a {
+        padding-left: 0; /*remove padding for smaller screens*/
+    }
+
+    .header-right{
+        float: none;
+        padding-right: 0;
+        text-align: center;
+        width: 100%; /*full width*/
+        padding-top: 10px; /*add padding top*/  
+    }
+  }
+
+  @media (max-width:480px) {
+    body {
+        font-size: 14px;
+    }
+
+    header, footer {
+        padding: 0rem;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    #container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    #container a{
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .header-right{
+        padding-top: 5px;
+    }
+
+  }
+
+  @keyframes click-animation {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(0.98765);
+    }
+    100% {
+        transform: scale(1);
+    }
+  }

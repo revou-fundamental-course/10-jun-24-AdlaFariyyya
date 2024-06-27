@@ -2,44 +2,44 @@ let isCelsiusToFahrenheit = true;
 
 //Konversi
 function temperatureConverter() {
-   const inputTemp = document.getElementById('inputTemp').value;
-   let outputTemp, formula;
-   var errorText = document.getElementById('errorText');
-   var celciusInput = document.getElementById('inputTemp');
-    var celciusValue = parseFloat(celciusInput.value);
-    var errorText = document.getElementById('errorText');
+  const inputTemp = document.getElementById('inputTemp').value;
+  let outputTemp, formula;
+  const errorText = document.getElementById('errorText');
+  const inputValue = parseFloat(inputTemp);
+
+//  Empty input value validation
+if (isNaN(inputValue) || inputTemp.trim() === '') {
+  // Show error message
+  errorText.innerText = "Mohon masukkan Angka";
+  errorText.style.display = 'block';
+
+  // Clear outputs
+  document.getElementById('outputTemp').value = '';
+  document.getElementById('formula').value = '';
+  return; //exit the function if input is valid
+
+} else {
+  // Hide error message if input is valid
+  errorText.style.display = 'none';
+}
+
+
 
 
     // Celcius to Fahrenheit
    if (isCelsiusToFahrenheit) {
     outputTemp = (inputTemp * 9/5) + 32;
-    formula =`${inputTemp}°C × 9/5 + 32 = ${outputTemp}°F`;
+    formula =`${inputTemp}°C × 9/5 + 32 = ${outputTemp.toFixed(2)}°F`;
 
     // Fahrenheit to Celcius
    }else {
     outputTemp = (inputTemp - 32) * 5/9;
-    formula =`(${inputTemp}°F - 32) × 5/9 = ${outputTemp}°C`;
+    formula =`(${inputTemp}°F - 32) × 5/9 = ${outputTemp.toFixed(2)}°C`;
    }
-   document.getElementById('outputTemp').value = outputTemp;
+   document.getElementById('outputTemp').value = outputTemp.toFixed(2);
    document.getElementById('formula').value = formula;
 
-   if (isNaN(celciusValue) || celciusInput.value.trim() === '') {
-       // Show error message
-       errorText.innerText = "Mohon masukkan Angka";
-       errorText.style.display = 'block';
 
-       // Clear Fahrenheit output
-       document.getElementById('outputTemp').value = '';
-   } else {
-       // Hide error message if input is valid
-       errorText.style.display = 'none';
-   }
-
-   // Reset input field
-   celciusInput.value = '';
-
-   // Animate button
-   animateButton(document.getElementById('convertButton'));
 }
 
 
@@ -48,6 +48,7 @@ function resetConverter() {
     document.getElementById('inputTemp').value  = '';
     document.getElementById('outputTemp').value = '';
     document.getElementById('formula').value    = '';
+    document.getElementById('errorText').style.display = 'none';
 }
  
 //Reverse Button
@@ -73,8 +74,11 @@ function reverseConverter(){
   document.getElementById('inputTemp').value    = document.getElementById('outputTemp').value;
   document.getElementById('outputTemp').value   = tempInputValue;
 
-  //Penghitungan Langsung
+  //Calculation if input doesn't empty
+  if (tempInputValue.trim() !== '') {
   temperatureConverter();
+
+  }
 }
 
 // Enter Keyboard
@@ -86,4 +90,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-
+function animateButton(button) {
+  button.classList.add('clicked');
+  setTimeout(() => {
+    button.classList.remove('clicked');
+  }, 200);// Durasi animasi harus sama dengan yang didefinisikan di CSS
+}
